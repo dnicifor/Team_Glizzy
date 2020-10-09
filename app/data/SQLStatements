@@ -1,0 +1,58 @@
+create table People (
+	PersonID varchar(20) not null,
+    FirstName varchar(64),
+    LastName varchar(64),
+    Email varchar(255),
+    PhoneNumber varchar(20),
+    DateOfBirth date,
+    StartDate date,
+    Gender varchar(20),
+    RadioNumber int,
+    StationNumber int,
+    ActiveStatus bool,
+    Constraint PK_Person PRIMARY KEY (PersonID)
+);
+
+
+INSERT INTO People (PersonID, FirstName, LastName, Email, PhoneNumber, DateOfBirth, StartDate, Gender, RadioNumber, StationNumber, ActiveStatus) 
+VALUES
+("janders1", "John", "Anderson", "janders1@ocfr.com", "812-890-4532", "1987-02-24", "2016-10-23", "M", "132", "3", "T" ),
+("mmoore34", "Mary", "Moore", "mmoore34@ocfr.com", "812-745-4837", "1980-05-17", "2010-12-23", "F", "129", "15", "F" ),
+("arigs42", "Alison", "Rigle", "arigs42@ocfr.com", "812-689-3743", "1994-06-13", "2018-04-24", "F", "111", "3", "T" ),
+("dsmith22", "Daniel", "Smith", "dsmith22@ocfr.com", "812-543-6745", "1990-02-24", "2012-04-12", "M", "103", "13", "T" ),
+
+
+create table Certifications (
+	CertificationID varchar(20) not null,
+	CertificationName varchar(255),
+	CertifyingAgency varchar(255),
+	ExpirationPeriod date,
+	Constraint PK_Cert PRIMARY KEY (CertificationID)
+);
+
+INSERT INTO Certifications(CertificationID, CertificationName, CertifyingAgency, ExpirationPeriod) 
+VALUES
+("cpr1", "CPR", "American Heart Association", "2"),
+("cpr2", "CPR", "American Red Cross", "2"),
+("ff01", "Firefighter 1", "Athens Technical College", "3"),
+("ff02", "Firefighter 1", "Ivy Technical College", "3");
+
+
+create table CertificationAssignment (
+	CertificationID varchar(20) not null,
+	PersonID varchar(20) not null,
+	AssignmentDate date,
+	Constraint PK_CertAssign PRIMARY KEY (CertificationID, PersonID),
+	Constraint FK_CertAssign_Cert FOREIGN KEY (CertificationID) references Certifications(CertificationID),
+	Constraint FK_CertAssign_Person FOREIGN KEY (PersonID) references People(PersonID)
+);
+
+
+INSERT INTO CertificationAssignment(CertificationID, PersonID, AssignmentDate) 
+VALUES
+("ff01",janders1, "2020-09-01"),
+("cpr2", "arigs42", "2020-04-03),
+("cpr1", "dsmith22", "1950-00-00"),
+
+
+
