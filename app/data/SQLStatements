@@ -21,7 +21,7 @@ VALUES
 ("janders1", "John", "Anderson", "janders1@ocfr.com", "812-890-4532", "1987-02-24", "2016-10-23", "M", "132", "3", "T" ),
 ("mmoore34", "Mary", "Moore", "mmoore34@ocfr.com", "812-745-4837", "1980-05-17", "2010-12-23", "F", "129", "15", "F" ),
 ("arigs42", "Alison", "Rigle", "arigs42@ocfr.com", "812-689-3743", "1994-06-13", "2018-04-24", "F", "111", "3", "T" ),
-("dsmith22", "Daniel", "Smith", "dsmith22@ocfr.com", "812-543-6745", "1990-02-24", "2012-04-12", "M", "103", "13", "T" ),
+("dsmith22", "Daniel", "Smith", "dsmith22@ocfr.com", "812-543-6745", "1990-02-24", "2012-04-12", "M", "103", "13", "T" );
 
 
 create table Certifications (
@@ -56,4 +56,4 @@ INSERT INTO CertificationAssignment(CertificationID, PersonID, AssignmentDate)
 VALUES
 ("ff01",janders1, "2020-09-01"),
 ("cpr2", "arigs42", "2020-04-03),
-("cpr1", "dsmith22", "1950-00-00"),
+("cpr1", "dsmith22", "1950-00-00");
