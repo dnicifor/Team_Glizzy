@@ -14,17 +14,17 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md">
-      <a class="navbar-brand" href="#">O.C.F.R.</a>
+      <a class="nav-logo" href="index.html">O.C.F.R.</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="Members.html">Members</a>
+            <a class="nav-link" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item" style:"padding-left:10px">
+            <a class="navbar-brand" href="Members.html">Members</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Certifications.html">Certifications</a>
@@ -33,9 +33,107 @@
       </div>
     </nav>
 
+    <p>
+      <br></br>
+      <br></br>
+    </p>
+    
+    <p>
+      <h1>Members</h1>
+    </p>
     <div class="container-fluid" id="pageTitles">
-      <p><h1>Members</h1>
-      </p>
+        <table id="sortTable" class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Year Published</th>
+              <th scope="col">Publisher</th>
+              <th scope="col">Page Count</th>
+              <th scope="col">Price (MSRP)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>The Art of War</td>
+              <td>Sun Tzu</td>
+              <td>5th Century BC</td>
+              <td>Emperor Shenzong of Song</td>
+              <td>260</td>
+              <td>$ 15.00</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Harry Potter and the Deathly Hallows</td>
+              <td>J.K.Rowling</td>
+              <td>2007</td>
+              <td>Bloomsbury Publishing</td>
+              <td>607</td>
+              <td>$ 17.00</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Lord of the Rings</td>
+              <td>J.R.R. Tolkien</td>
+              <td>1954</td>
+              <td>Allen & Unwin</td>
+              <td>1178</td>
+              <td>$ 23.00</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Percy Jackson - The Lightning Thief</td>
+              <td>Rick Riordan</td>
+              <td>2005</td>
+              <td>Miramax Books</td>
+              <td>377</td>
+              <td>$ 6.00</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>The Kane Chronicles: The Red Pyramid</td>
+              <td>Rick Riordan</td>
+              <td>2010</td>
+              <td>Disney Hyperion</td>
+              <td>516</td>
+              <td>$ 10.00</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Star Wars: Episode I – The Phantom Menace</td>
+              <td>Terry Brooks</td>
+              <td>1999</td>
+              <td>Del Rey</td>
+              <td>324</td>
+              <td>$ 15.00</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Artemis Fowl</td>
+              <td>Eoin Colfer</td>
+              <td>2001</td>
+              <td>Viking Press</td>
+              <td>280</td>
+              <td>$ 7.00</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td><input form="form1" type="text" name="Title"/></td>
+                <td><input form="form1" type="text" name="Author"/></td>
+                <td><input form="form1" type="text" name="Year Published"/></td>
+                <td><input form="form1" type="text" name="Publisher"/></td>
+                <td><input form="form1" type="text" name="Page Count"/></td>
+                <td><input form="form1" type="text" name="Price"/></td>
+                <td>
+                  <button type="Add Book" class="btn btn-primary">Add Book</button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        <script src="js/tablesort.min.js"></script>
+        <script>new Tablesort(document.getElementById('sortTable'));</script>
     </div>
     <!-- END content -->
 
