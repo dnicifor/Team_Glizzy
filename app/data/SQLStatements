@@ -28,7 +28,7 @@ create table Certifications (
 	CertificationID in not null auto_increment,
 	CertificationName varchar(255),
 	CertifyingAgency varchar(255),
-	ExpirationPeriod date,
+	ExpirationPeriod int,
 	PRIMARY KEY (CertificationID)
 );
 
