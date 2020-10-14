@@ -1,24 +1,42 @@
 html,
 body {
-  background-color: white;
+  background-color: rgb(240,220,220);
   color: #333;
+  font-family: arial;
 }
 
 nav,
 .navbar {
-  background-color: rgb(20,40,180);
+  background-color: rgb(184,82,82);
   color: #eee;
+  position: fixed;
+  top: 8%;
+  margin-top: -2.5em;
+  width: 100%;
+  font-family: arial black;
+  font-size: 20px;
+  border-bottom: 3px solid rgb(110,49,49);
 }
 
 .navbar a.navbar-brand,
 .navbar a.nav-link,
+.navbar a.nav-logo,
 .navbar a.nav-link:visited {
   color: #eee;
 }
 
+.navbar a.navbar-brand {
+  color: rgb(110,49,49);
+  padding-top: 5px;
+  font-size: 25px;
+}
 .navbar a.nav-link:hover {
-  background-color: rgb(50,80,220);
+  background-color: rgb(110,49,49);
   color: #fff;
+}
+.navbar a.nav-logo{
+  font-size: 30px;
+  padding-right: 15px;
 }
 
 #pageTitles {
@@ -67,4 +85,7 @@ nav,
 .triageMinor {
   border: 3px solid rgb(50,80,220);
   margin: 8px 4px;
+}
+input[type=text] {
+  width: 730px;
 }
