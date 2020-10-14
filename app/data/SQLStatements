@@ -1,7 +1,7 @@
 use ocfrdb;
 
 create table People (
-	PersonID varchar(255) not null,
+	PersonID int not null auto_increment,
     FirstName varchar(255),
     LastName varchar(255),
     Email varchar(255),
@@ -12,7 +12,7 @@ create table People (
     RadioNumber int,
     StationNumber int,
     ActiveStatus bool,
-    Constraint PK_Person PRIMARY KEY (PersonID)
+    PRIMARY KEY (PersonID)
 );
 
 
@@ -25,11 +25,11 @@ VALUES
 
 
 create table Certifications (
-	CertificationID varchar(255) not null,
+	CertificationID in not null auto_increment,
 	CertificationName varchar(255),
 	CertifyingAgency varchar(255),
 	ExpirationPeriod date,
-	Constraint PK_Cert PRIMARY KEY (CertificationID)
+	PRIMARY KEY (CertificationID)
 );
 
 INSERT INTO Certifications(CertificationID, CertificationName, CertifyingAgency, ExpirationPeriod)
@@ -43,12 +43,12 @@ VALUES
 
 
 create table CertificationAssignment (
-	CertificationID varchar(255) not null,
-	PersonID varchar(255) not null,
+	CertificationID int not null auto_increment,
+	PersonID int not null auto_increment,
 	AssignmentDate date,
-	Constraint PK_CertAssign PRIMARY KEY (CertificationID, PersonID),
-	Constraint FK_CertAssign_Cert FOREIGN KEY (CertificationID) references Certifications(CertificationID),
-	Constraint FK_CertAssign_Person FOREIGN KEY (PersonID) references People(PersonID)
+	PRIMARY KEY (CertificationID, PersonID),
+	FOREIGN KEY (CertificationID) references Certifications(CertificationID),
+	FOREIGN KEY (PersonID) references People(PersonID)
 );
 
 
