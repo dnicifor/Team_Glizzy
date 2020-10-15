@@ -37,103 +37,39 @@
       <br></br>
       <br></br>
     </p>
-    
+
     <p>
       <h1>Members</h1>
     </p>
-    <div class="container-fluid" id="pageTitles">
-        <table id="sortTable" class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Title</th>
-              <th scope="col">Author</th>
-              <th scope="col">Year Published</th>
-              <th scope="col">Publisher</th>
-              <th scope="col">Page Count</th>
-              <th scope="col">Price (MSRP)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>The Art of War</td>
-              <td>Sun Tzu</td>
-              <td>5th Century BC</td>
-              <td>Emperor Shenzong of Song</td>
-              <td>260</td>
-              <td>$ 15.00</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Harry Potter and the Deathly Hallows</td>
-              <td>J.K.Rowling</td>
-              <td>2007</td>
-              <td>Bloomsbury Publishing</td>
-              <td>607</td>
-              <td>$ 17.00</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Lord of the Rings</td>
-              <td>J.R.R. Tolkien</td>
-              <td>1954</td>
-              <td>Allen & Unwin</td>
-              <td>1178</td>
-              <td>$ 23.00</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Percy Jackson - The Lightning Thief</td>
-              <td>Rick Riordan</td>
-              <td>2005</td>
-              <td>Miramax Books</td>
-              <td>377</td>
-              <td>$ 6.00</td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>The Kane Chronicles: The Red Pyramid</td>
-              <td>Rick Riordan</td>
-              <td>2010</td>
-              <td>Disney Hyperion</td>
-              <td>516</td>
-              <td>$ 10.00</td>
-            </tr>
-            <tr>
-              <th scope="row">6</th>
-              <td>Star Wars: Episode I – The Phantom Menace</td>
-              <td>Terry Brooks</td>
-              <td>1999</td>
-              <td>Del Rey</td>
-              <td>324</td>
-              <td>$ 15.00</td>
-            </tr>
-            <tr>
-              <th scope="row">7</th>
-              <td>Artemis Fowl</td>
-              <td>Eoin Colfer</td>
-              <td>2001</td>
-              <td>Viking Press</td>
-              <td>280</td>
-              <td>$ 7.00</td>
-            </tr>
-            <tr>
-                <th scope="row">8</th>
-                <td><input form="form1" type="text" name="Title"/></td>
-                <td><input form="form1" type="text" name="Author"/></td>
-                <td><input form="form1" type="text" name="Year Published"/></td>
-                <td><input form="form1" type="text" name="Publisher"/></td>
-                <td><input form="form1" type="text" name="Page Count"/></td>
-                <td><input form="form1" type="text" name="Price"/></td>
-                <td>
-                  <button type="Add Book" class="btn btn-primary">Add Book</button>
-                </td>
-            </tr>
-          </tbody>
-        </table>
-        <script src="js/tablesort.min.js"></script>
-        <script>new Tablesort(document.getElementById('sortTable'));</script>
+    <div id="members">
+      <table id="sortTable" class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Date Started</th>
+            <th scope="col">Position</th>
+            <th scope="col">Active?</th>
+            <th scope="col">Radio Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for = "user, index in members">
+            <th scope="row">{{ index }}</th>
+            <td>{{ userFirst }}</td>
+            <td>{{ userLast }}</td>
+            <td>{{ userDob }}</td>
+            <td>{{ userGender }}</td>
+            <td>{{ userStart }}</td>
+            <td>{{ userPosition }}</td>
+            <td>{{ userActive }}</td>
+            <td>{{ userRadio }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <!-- END content -->
 
@@ -143,9 +79,16 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    <!-- BootStrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/index.app.js"></script>
+
+    <script src="js/members.js"></script>
   </body>
 </html>
