@@ -12,15 +12,15 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO PatientVisit (patientGuid, priority, visitDateUtc, visitDescription)
+  'SELECT FROM Certifications(CertificationID, CertificationName, CertifyingAgency, ExpirationPeriod)
   VALUES (?, ?, ?, ?)'
 );
 
 $stmt->execute([
-  $_POST['patientGuid'],
-  $_POST['priority'],
-  $_POST['visitDateUtc'],
-  $_POST['visitDescription']
+  $_GET['CertificationID'],
+  $_GET['CertificationName'],
+  $_GET['CertifyingAgency'],
+  $_GET['ExpirationPeriod']
 ]);
 
 // If needed, get auto-generated PK from DB

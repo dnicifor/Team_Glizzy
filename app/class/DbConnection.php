@@ -7,11 +7,6 @@ class DbConnection
   // function __create() {
   // DB Name:  ocfrdb
 
-Username: Glizzy
-
-Password: teamglizzy
-
-Endpoint: ocfrdb.ctssamz9gg38.us-east-1.rds.amazonaws.com
   // }
 
     static function getConnection() {

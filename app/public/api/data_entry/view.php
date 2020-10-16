@@ -12,15 +12,22 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO PatientVisit (patientGuid, priority, visitDateUtc, visitDescription)
-  VALUES (?, ?, ?, ?)'
+  'SELECT FROM People(PersonID, FirstName, LastName, Email, PhoneNumber, DateOfBirth, StartDate, Gender, RadioNumber, StationNumber, ActiveStatus)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
-  $_POST['patientGuid'],
-  $_POST['priority'],
-  $_POST['visitDateUtc'],
-  $_POST['visitDescription']
+  $_GET['PersonID'],
+  $_GET['FirstName'],
+  $_GET['LastName'],
+  $_GET['Email']
+  $_GET['PhoneNumber']
+  $_GET['DateOfBirth']
+  $_GET['StartDate']
+  $_GET['Gender']
+  $_GET['StationNumber']
+  $_GET['ActiveStatus']
+
 ]);
 
 // If needed, get auto-generated PK from DB
