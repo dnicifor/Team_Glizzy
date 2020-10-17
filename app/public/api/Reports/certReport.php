@@ -6,14 +6,16 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT People.PersonID, Certifications.CertificationID
-        FROM People,Certifications
-        WHERE  People.PersonID = Certifications.CertificationID
-        ORDER BY CertificationID, DESC ';
-$vars = []
-  $_GET['PersonID']
-  $_GET['CertificationID']
-;
+$sql = 'SELECT p.FirstName, p.LastName, c.CertificationName
+from People p, Certifications c, CertificationAssignment ca
+WHERE p.PersonID=ca.PersonID and c.CertificationID=ca.CertificationID and
+CURDATE() > DATE_ADD(ca.AssignmentDate, INTERVAL c.ExpirationPeriod YEAR)
+ORDER BY c.CertificationName ASC; ';
+$vars = [];
+
+  $_GET['FirstName']
+  $_GET['LastName']
+  $_GET['CertificationName'];
 
 // if (isset($_GET['guid'])) {
 //   // This is an example of a parameterized query

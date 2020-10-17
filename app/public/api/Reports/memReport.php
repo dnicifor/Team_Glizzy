@@ -6,14 +6,17 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT People.PersonID, Certifications.CertificationID
-        FROM People,Certifications
-        WHERE  People.PersonID = Certifications.CertificationID
-        ORDER BY CertificationID, DESC ';
-$vars = []
-  $_GET['PersonID']
-  $_GET['CertificationID']
-;
+$sql = 'SELECT p.StationNumber, p.RadioNumber, p.FirstName, p.LastName, p.Email
+from People p
+ORDER BY p.StationNumber asc; ';
+$vars = [];
+
+  $_GET['StationNumber']
+  $_GET['RadioNumber']
+  $_GET['FirstName']
+  $_GET['LastName']
+  $_GET['Email']
+  ;
 
 // if (isset($_GET['guid'])) {
 //   // This is an example of a parameterized query
