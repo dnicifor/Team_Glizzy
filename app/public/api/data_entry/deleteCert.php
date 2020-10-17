@@ -12,12 +12,11 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO CertificationAssignment (AssignmentDate)
-  VALUES (?);'
+  'DELETE FROM Certifications WHERE CertificationIDID='?';'
 );
 
 $stmt->execute([
-  $_POST['AssignmentDate']
+  $_POST['CertificationID']
 ]);
 
 // If needed, get auto-generated PK from DB
