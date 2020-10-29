@@ -2,12 +2,16 @@ var app = new Vue({
   el: '#members',
   data: {
     mem: [{
-      FirstName:'',
-      LastName:'',
-      DateOfBirth:'',
-      Gender:'',
-      StartDate:'',
-      RadioNumber:'',
+      FirstName: '',
+      LastName: '',
+      EmailL: '',
+      PhoneNumber: '',
+      DateOfBirth: '',
+      StartDate: '',
+      Gender: '',
+      RadioNumber: '',
+      StationNumber: '',
+      ActiveStatus: '',
     }],
 
   created() {
