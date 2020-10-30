@@ -33,31 +33,54 @@
       </div>
     </nav>
 
-    <p>
-      <br></br>
-      <br></br>
-    </p>
-
-    <p>
       <h1>Certifications</h1>
     </p>
 
-    <div id="certs">
-      <table>
+    <div class= "col-6" id="certs">
+      <table class = "table" id="certTable">
         <thead>
           <th><h2>Certifications</h2></th>
+          <tr>
+            <th scope="col">Certification ID</th>
+            <th scope="col">Certification Name</th>
+            <th scope="col">Certifying Agency</th>
+            <th scope="col">Expiration Period</th>
+          </tr>
         </thead>
 
-        <tbody>
+        <tbody id="certTableBody">
           <tr class = "certifications" v-for="cert in certifications">
-            <td><b>ID : </b> {{ cert.CertificationID }}</td></br>
-            <td><b>Name : </b> {{ cert.CertificationName }}</td></br>
-            <td><b>Agency : </b> {{ cert.CertifyingAgency }}</td></br>
-            <td><b>Expiration Period : </b> {{ cert.ExpirationPeriod }}</td></br>
+            <td><span>{{cert.CertificationID}}</span></td>
+            <td><span>{{cert.CertificationName}}</span></td>
+            <td><span>{{cert.CertifyingAgency}}</span></td>
+            <td><span>{{cert.ExpirationPeriod}}</span></td>
           </tr>
         </tbody>
       </table>
+
+      <form v-on:submit.prevent="createCert()" id="newCertForm">
+
+          <label for="commentText">Certification Name</label>
+          <input type="text" v-model="newCert.CertificationName" class="form-control" id="CertificationName" placeholder="Certification Name">
+          <label for="commentText">Certification Agency</label>
+          <input type="text" v-model="newCert.CertifyingAgency" class="form-control" id="CertifyingAgency" placeholder="Certification Agency">
+          <label for="commentText">Expiration Period</label>
+          <input type="text" v-model="newCert.ExpirationPeriod" class="form-control" id="ExpirationPeriod" placeholder="Expiration Period">
+
+
+
+
+  <td>    <input type = "submit" value="Post Certification" class = "button">
+  </td>
+  </form>
+
+
+
+
+
     </div>
+
+
 
     <!-- END content -->
 
@@ -76,6 +99,6 @@
     <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="js/certifications.js"></script>
+    <script src="js/certifications.app.js"></script>
   </body>
 </html>
