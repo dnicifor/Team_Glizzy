@@ -4,7 +4,7 @@ memberApp = new Vue({
     mem: [{
       FirstName: '',
       LastName: '',
-      EmailL: '',
+      Email: '',
       PhoneNumber: '',
       DateOfBirth: '',
       StartDate: '',
