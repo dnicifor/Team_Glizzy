@@ -41,26 +41,24 @@
     <p>
       <h1>Certifications</h1>
     </p>
+
     <div id="certs">
-      <table id="sortTable" class="table">
+      <table>
         <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Agency</th>
-            <th scope="col">Expiration Date</th>
-          </tr>
+          <th><h2>Certifications</h2></th>
         </thead>
+
         <tbody>
-          <tr v-for = "creds, index in certifications">
-            <th scope="row">{{ index }}</th>
-            <td>{{ credsName }}</td>
-            <td>{{ credsAgency }}</td>
-            <td>{{ credsExp }}</td>
+          <tr class = "certifications" v-for="cert in certifications">
+            <td><b>ID : </b> {{ cert.CertificationID }}</td></br>
+            <td><b>Name : </b> {{ cert.CertificationName }}</td></br>
+            <td><b>Agency : </b> {{ cert.CertifyingAgency }}</td></br>
+            <td><b>Expiration Period : </b> {{ cert.ExpirationPeriod }}</td></br>
           </tr>
         </tbody>
       </table>
     </div>
+
     <!-- END content -->
 
     <!-- Footer? Insert here -->
