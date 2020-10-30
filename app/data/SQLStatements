@@ -14,7 +14,7 @@ create table People (
     ActiveStatus bool,
     PRIMARY KEY (PersonID)
 );
-
+p.FirstName, p.LastName, p.Email, p.PhoneNumber, p.DateOfBirth, p.StartDate, p.Gender, p.RadioNumber, p.StationNumber, p.ActiveStatus
 
 INSERT INTO People (PersonID, FirstName, LastName, Email, PhoneNumber, DateOfBirth, StartDate, Gender, RadioNumber, StationNumber, ActiveStatus)
 VALUES
