@@ -43,6 +43,7 @@ memberApp = new Vue({
             console.log(this.memInfo);
           });
         },
+        
       deleteMember() {
         fetch('api/data_entry/deleteMember.php')
           .then(response => response.json())
