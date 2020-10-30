@@ -14,17 +14,17 @@ $vars = [];
 
 if (isset($_GET['guid'])) {
   // This is an example of a parameterized query
-  $sql = 'SELECT * FROM Patient WHERE patientGuid = ?';
+  $sql = 'SELECT * FROM Member WHERE PersonID = ?';
   $vars = [ $_GET['guid'] ];
 }
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$patients = $stmt->fetchAll();
+$members = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($members, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');

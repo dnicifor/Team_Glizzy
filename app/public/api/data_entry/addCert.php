@@ -13,14 +13,14 @@ $db = DbConnection::getConnection();
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
   'INSERT INTO Certifications (CertificationID, CertificationName, CertificationAgency, ExpirationPeriod)
-  VALUES (?, ?, ?, ?, ?);'
+  VALUES (?, ?, ?, ?);'
 );
 
 $stmt->execute([
-  $_POST['patientGuid'],
-  $_POST['priority'],
-  $_POST['visitDateUtc'],
-  $_POST['visitDescription']
+  $_POST['CertificationID'],
+  $_POST['CertificationName'],
+  $_POST['CertificaationAgency'],
+  $_POST['ExpirationPeriod']
 ]);
 
 // If needed, get auto-generated PK from DB

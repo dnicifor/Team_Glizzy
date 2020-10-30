@@ -32,10 +32,10 @@ $vars = [];
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$patients = $stmt->fetchAll();
+$memreport = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($memreport, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
