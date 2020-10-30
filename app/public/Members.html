@@ -42,16 +42,24 @@
       <h1>Members</h1>
     </p>
 
-    <div id="commentTable">
-      <table class="table" id="commentTable">
+    <div id="members">
+      <table class="table" id="members">
         <thead>
-          <th><h2>Comments Table</h2></th>
+          <th><h2>Members</h2></th>
         </thead>
 
-        <tbody id = "commentTableBody">
-          <tr class = "comments" v-for="com in comments">
-            <td><b>ID : </b> {{ com.id }}</td></br>
-            <td><b>Comment : </b> {{ com.commentText }}</td></br>
+        <tbody>
+          <tr class = "mem" v-for="m in mem">
+            <td><b>First Name : </b> {{ m.FirstName }}</td></br>
+            <td><b>Last Name : </b> {{ m.LastName }}</td></br>
+            <td><b>Email : </b> {{ m.Email }}</td></br>
+            <td><b>Phone Number : </b> {{ m.PhoneNumber }}</td></br>
+            <td><b>Date of Birth : </b> {{ m.DateOfBirth }}</td></br>
+            <td><b>Start Date : </b> {{ m.StartDate }}</td></br>
+            <td><b>Gender : </b> {{ m.Gender }}</td></br>
+            <td><b>Radio Number : </b> {{ m.RadioNumber }}</td></br>
+            <td><b>Station Number : </b> {{ m.StationNumber }}</td></br>
+            <td><b>Active Status : </b> {{ m.ActiveStatus }}</td></br>
           </tr>
         </tbody>
       </table>

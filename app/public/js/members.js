@@ -1,4 +1,4 @@
-var app = new Vue({
+memberApp = new Vue({
   el: '#members',
   data: {
     mem: [{
@@ -17,9 +17,10 @@ var app = new Vue({
   created() {
     this.fetchMember();
   },
+
   methods: {
     fetchMember() {
-      fetch('api/data_entry/members.php')
+      fetch('api/Reports/')
         .then(response => response.json())
         .then(json => {
           this.mem=json;
