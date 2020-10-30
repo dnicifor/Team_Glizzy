@@ -1,2 +1,1 @@
-# msis-triage-2020
-The in-class example for MSIS 2020
+This is Team Glizzy Final Project

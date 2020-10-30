@@ -24,10 +24,10 @@ $vars = []
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$patients = $stmt->fetchAll();
+$memcert = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($memcert, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
