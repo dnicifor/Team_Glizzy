@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: rgb(240,220,220);
+  background-color: rgb(238,244,249);
   color: #333;
   font-family: arial;
 }
@@ -15,7 +15,6 @@ nav,
   width: 100%;
   font-family: arial black;
   font-size: 20px;
-  border-bottom: 3px solid rgb(110,49,49);
 }
 
 .navbar a.navbar-brand,
@@ -26,12 +25,12 @@ nav,
 }
 
 .navbar a.navbar-brand {
-  color: rgb(110,49,49);
+  color: rgb(255,255,255);
   padding-top: 5px;
   font-size: 25px;
 }
 .navbar a.nav-link:hover {
-  background-color: rgb(110,49,49);
+  color: rgb(255,255,255);
   color: #fff;
 }
 .navbar a.nav-logo{

@@ -6,22 +6,25 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT p.FirstName, p.LastName, p.Email, p.PhoneNumber, p.DateOfBirth, p.StartDate, p.Gender, p.RadioNumber, p.StationNumber, p.ActiveStatus
-from People p
-ORDER BY p.StationNumber asc; ';
+$sql = 'SELECT * FROM Members';
 $vars = [];
 
-  $_GET['FirstName']
-  $_GET['LastName']
-  $_GET['Email']
-  $_GET['PhoneNumber']
-  $_GET['DateOfBirth']
-  $_GET['StartDate']
-  $_GET['Gender']
-  $_GET['RadioNumber']
-  $_GET['StationNumber']
-  $_GET['ActiveStatus']
-  ;
+// $sql = 'SELECT p.FirstName, p.LastName, p.Email, p.PhoneNumber, p.DateOfBirth, p.StartDate, p.Gender, p.RadioNumber, p.StationNumber, p.ActiveStatus
+// from People p
+// ORDER BY p.StationNumber asc; ';
+// $vars = [];
+
+  // $_GET['FirstName']
+  // $_GET['LastName']
+  // $_GET['Email']
+  // $_GET['PhoneNumber']
+  // $_GET['DateOfBirth']
+  // $_GET['StartDate']
+  // $_GET['Gender']
+  // $_GET['RadioNumber']
+  // $_GET['StationNumber']
+  // $_GET['ActiveStatus']
+  // ;
 
 // if (isset($_GET['guid'])) {
 //   // This is an example of a parameterized query

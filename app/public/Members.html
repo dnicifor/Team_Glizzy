@@ -13,7 +13,7 @@
     <title>OCFR</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="nav-logo" href="index.html">O.C.F.R.</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,28 +38,23 @@
       <br></br>
     </p>
 
-    <p>
       <h1>Members</h1>
-    </p>
 
     <div id="members">
       <table>
-        <thead>
-          <th><h2>Members</h2></th>
-        </thead>
-
         <tbody>
-          <tr class = "mem" v-for="m in mem">
-            <td><b>First Name : </b> {{ m.FirstName }}</td></br>
-            <td><b>Last Name : </b> {{ m.LastName }}</td></br>
-            <td><b>Email : </b> {{ m.Email }}</td></br>
-            <td><b>Phone Number : </b> {{ m.PhoneNumber }}</td></br>
-            <td><b>Date of Birth : </b> {{ m.DateOfBirth }}</td></br>
-            <td><b>Start Date : </b> {{ m.StartDate }}</td></br>
-            <td><b>Gender : </b> {{ m.Gender }}</td></br>
-            <td><b>Radio Number : </b> {{ m.RadioNumber }}</td></br>
-            <td><b>Station Number : </b> {{ m.StationNumber }}</td></br>
-            <td><b>Active Status : </b> {{ m.ActiveStatus }}</td></br>
+          <tr v-for="member in memInfo ">
+            <td><b>ID : </b> {{ member.PersonID }}</td></br>
+            <td><b>First Name : </b> {{ member.FirstName }}</td></br>
+            <td><b>Last Name : </b> {{ member.LastName }}</td></br>
+            <td><b>Email : </b> {{ member.Email }}</td></br>
+            <td><b>Phone Number : </b> {{ member.PhoneNumber }}</td></br>
+            <td><b>Date of Birth : </b> {{ member.DateOfBirth }}</td></br>
+            <td><b>Start Date : </b> {{ member.StartDate }}</td></br>
+            <td><b>Gender : </b> {{ member.Gender }}</td></br>
+            <td><b>Radio Number : </b> {{ member.RadioNumber }}</td></br>
+            <td><b>Station Number : </b> {{ member.StationNumber }}</td></br>
+            <td><b>Active Status : </b> {{ member.ActiveStatus }}</td></br>
           </tr>
         </tbody>
       </table>
