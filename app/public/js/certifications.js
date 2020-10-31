@@ -14,8 +14,8 @@ var app = new Vue({
   },
 
   methods: {
-    fetchMember() {
-      fetch('api/Reports/certReport.php')
+    fetchCert() {
+      fetch('api/view/certifications.php')
         .then(response => response.json())
         .then(json => {
           this.certifications=json;

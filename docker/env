@@ -1,4 +1,4 @@
-MYSQL_DATABASE=OCFRdb
-MYSQL_HOST=ocfrdb.ctssamz9gg38.us-east-1.rds.amazonaws.com
+MYSQL_DATABASE=ocfrdb
+MYSQL_HOST=ec2-54-236-25-57.compute-1.amazonaws.com
 MYSQL_USER=Glizzy
 MYSQL_PASSWORD=teamglizzy
