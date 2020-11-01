@@ -26,9 +26,10 @@ ocfrApp = new Vue({
       }
     },
 
-    // Member Functions
+    // Created Functions
     created() {
       this.fetchMember();
+      this.fetchCert();
     },
 
     // created() {
@@ -44,6 +45,9 @@ ocfrApp = new Vue({
     // },
 
     methods: {
+
+      //Members
+
       fetchMember() {
         fetch('api/view/members.php')
           .then(response => response.json())
@@ -107,20 +111,15 @@ ocfrApp = new Vue({
 
 
 
-      //Certification Functions
-      created() {
-        this.fetchCert();
-      },
+      //Certification
 
-      methods: {
-        fetchCert() {
-          fetch('api/view/certifications.php')
-            .then(response => response.json())
-            .then(json => {
-              this.certInfo=json;
-              console.log(this.certInfo);
-            });
-          },
+      fetchCert() {
+        fetch('api/view/certifications.php')
+          .then(response => response.json())
+          .then(json => {
+            this.certInfo=json;
+            console.log(this.certInfo);
+          });
         },
       },
   });
