@@ -57,6 +57,25 @@ ocfrApp = new Vue({
           });
         },
 
+      deleteMember(mid) {
+        console.log(mid);
+        fetch('api/data_entry/members/delete.php', {
+          method:'POST',
+          body: JSON.stringify({
+            "PersonID": mid
+          }),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        .then( response => response.json() )
+        .then( json => {
+          console.log("Returned from post:", json);
+          this.memInfo=json;
+        });
+        console.log("Deleting (POSTing)...!");
+      },
+
       // deleteMember() {
       //   fetch('api/data_entry/members/delete.php')
       //     .then(response => response.json())

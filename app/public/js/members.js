@@ -19,19 +19,8 @@ memberApp = new Vue({
 
     created() {
       this.fetchMember();
+      this.fetchmemStation();
     },
-
-    // created() {
-    //   this.deleteMember();
-    // },
-    //
-    // created() {
-    //   this.editMember();
-    // },
-    //
-    // created() {
-    //   this.addMember();
-    // },
 
     methods: {
       fetchMember() {

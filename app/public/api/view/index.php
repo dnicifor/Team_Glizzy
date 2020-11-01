@@ -7,7 +7,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $sql = 'SELECT People.PersonID, Certifications.CertificationID
-        FROM People,Certifications
+        FROM People, Certifications
         WHERE  People.PersonID = Certifications.CertificationID
         ORDER BY CertificationID, DESC ';
 $vars = []
