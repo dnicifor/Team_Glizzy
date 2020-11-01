@@ -1,18 +1,18 @@
 var app = new Vue({
   el: '#certs',
   data: {
-    certInfo: [],
+      certInfo: [],
 
-    newCert: {
-      CertificationID: '',
-    	CertificationName: '',
-    	CertifyingAgency: '',
-    	ExpirationPeriod: ''
+      newCert: {
+        CertificationID: '',
+      	CertificationName: '',
+      	CertifyingAgency: '',
+      	ExpirationPeriod: ''
     }
   },
 
   created() {
-    this.fetchMember();
+    this.fetchCert();
   },
 
   methods: {

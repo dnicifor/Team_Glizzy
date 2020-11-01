@@ -1,11 +1,7 @@
 var app = new Vue({
-  el: '#certs',
+  el: '#certsample',
   data: {
-    certifications: [
-      
-
-
-    ],
+    certifications: [],
 
     newCert: {
       CertificationID: '',
