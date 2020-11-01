@@ -35,6 +35,36 @@
       <br></br>
       <br></br>
 
+
+
+      <div class="container" id="firefighter">
+      			<section>
+      				<h2>Member Certification</h2>
+      				<div class="choose">
+      					<select v-model="choose.member">
+      						<option value="">All</option>
+      						<option v-for="m in members">{{m.First_Name}} {{m.Last_Name}}</option>
+      					</select>
+      				</div>
+
+      				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
+      				<p>
+
+
+      						<table>
+
+      							<tbody>
+      								<tr v-for="cd in certDetails" v-if="choose.member=='' || choose.member == (cd.First_Name + ' ' + cd.Last_Name)">
+      									<td>{{cd.First_Name}} {{cd.Last_Name}}</td>
+      									<td>{{cd.Certificate_Name}}</td>
+      									<td>{{cd.Exp_Date}}</td>
+      								</tr>
+      							</tbody>
+      						</table>
+
+                      </p>
+      			</section>
+      		</div>
     <div id="index">
       <table>
         <h1>Members</h1>
