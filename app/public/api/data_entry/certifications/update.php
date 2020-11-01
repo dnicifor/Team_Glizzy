@@ -14,13 +14,15 @@ $db = DbConnection::getConnection();
 $stmt = $db->prepare(
   "UPDATE Certification SET
     CertificateName=?,
-    ExpirationID=?
+    CertifyingAgency=?,
+    ExpirationPeriod=?
     WHERE CertificationID=?"
 );
 // might not end up needing all fields (this lists all from member table)
 $stmt->execute([
   $_POST['CertificateName'],
-  $_POST['ExpirationID'],
+  $_POST['CertifyingAgency'],
+  $_POST['ExpirationPeriod'],
   $_POST['CertificationID']
 ]);
 
