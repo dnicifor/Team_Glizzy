@@ -44,12 +44,12 @@
           <th><b>Last Name</b></th>
           <th><b>Email</b></th>
           <th><b>Phone Number</b></th>
-          <th><b>Date of Birth</b></th>
+          <!-- <th><b>Date of Birth</b></th>
           <th><b>Start Date</b></th>
           <th><b>Gender</b></th>
           <th><b>Radio Number</b></th>
           <th><b>Station Number</b></th>
-          <th><b>Active Status</b></th>
+          <th><b>Active Status</b></th> -->
         </thead>
         <tbody>
           <tr v-for="member in memInfo ">
@@ -58,12 +58,15 @@
             <td>{{ member.LastName }}</td>
             <td>{{ member.Email }}</td>
             <td>{{ member.PhoneNumber }}</td>
-            <td>{{ member.DateOfBirth }}</td>
+            <td><input type='button' value='Delete' v-on:click='deleteMember(member.Member_ID)'></td>
+            <td><input type='button' value='Edit'  v-on:click.prevent="activeMember = member"></input></td>
+            <a href = "memDetails.html" role = "button" class = "btn btn-info">Details</a>
+            <!-- <td>{{ member.DateOfBirth }}</td>
             <td>{{ member.StartDate }}</td>
             <td>{{ member.Gender }}</td></br>
             <td>{{ member.RadioNumber }}</td>
             <td>{{ member.StationNumber }}</td>
-            <td>{{ member.ActiveStatus }}</td>
+            <td>{{ member.ActiveStatus }}</td> -->
           </tr>
         </tbody>
       </table>
