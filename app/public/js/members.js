@@ -19,7 +19,7 @@ memberApp = new Vue({
 
     created() {
       this.fetchMember();
-      this.fetchmemStation();
+      this.fetchMemDetails();  //(viewMem php)
     },
 
     methods: {

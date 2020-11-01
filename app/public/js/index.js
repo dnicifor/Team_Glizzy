@@ -19,18 +19,33 @@ ocfrApp = new Vue({
       certInfo: [],
 
       newCert: {
-        CertificationID: '',
-      	CertificationName: '',
+        CertificationName: '',
       	CertifyingAgency: '',
       	ExpirationPeriod: ''
-      }
+      },
+
+      certAssign: [],
+
+      newAssign: {
+        PersonID: '',
+        CertificationID: '',
+        AssignmentDate: ''
+      },
+
+      memDetails: [],
+      memReport: [],
     },
 
     // Created Functions
     created() {
       this.fetchMember();
-      this.fetchCert();
+      this.fetchMemDetails();  //(viewMem php)
+      this.fetchMemReport(); //(memStaion.php)
+      this.fetchCert(); //(certifications.php)
+      this.fetchCertDetails(); //(viewCert.php)
+      this.fetchCertReport(); //(expiredCerts.php)
     },
+
 
     // created() {
     //   this.deleteMember();
@@ -57,6 +72,24 @@ ocfrApp = new Vue({
           });
         },
 
+      fetchMemDetails() {
+        fetch('api/Detail_view/viewMem.php')
+          .then(response => response.json())
+          .then(json => {
+            this.memDetails=json;
+            console.log(this.memDetails);
+          });
+      },
+
+      fetchMemReport() {
+        fetch('api/Detail_view/viewMem.php')
+          .then(response => response.json())
+          .then(json => {
+            this.memReport=json;
+            console.log(this.memReport);
+          });
+      },
+
       deleteMember(mid) {
         console.log(mid);
         fetch('api/data_entry/members/delete.php', {
@@ -75,6 +108,7 @@ ocfrApp = new Vue({
         });
         console.log("Deleting (POSTing)...!");
       },
+
 
       // deleteMember() {
       //   fetch('api/data_entry/members/delete.php')
@@ -140,5 +174,8 @@ ocfrApp = new Vue({
             console.log(this.certInfo);
           });
         },
+
+
+
       },
   });
