@@ -6,9 +6,11 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT p.StationNumber, p.RadioNumber, p.FirstName, p.LastName, p.Email
-from People p
-ORDER BY p.StationNumber asc; ';
+$sql = 'SELECT p.FirstName, p.LastName, c.CertificationName
+from People p, Certifications c, CertificationAssignment ca
+WHERE p.PersonID=ca.PersonID and c.CertificationID=ca.CertificationID and
+CURDATE() > DATE_ADD(ca.AssignmentDate, INTERVAL c.ExpirationPeriod YEAR)
+ORDER BY c.CertificationName ASC; ';
 $vars = [];
 //
 //   $_GET['FirstName']
