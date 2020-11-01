@@ -1,12 +1,14 @@
 var app = new Vue({
   el: '#certs',
   data: {
-    certifications: [{
+    certInfo: [],
+
+    newCert: {
       CertificationID: '',
     	CertificationName: '',
     	CertifyingAgency: '',
-    	ExpirationPeriod: '',
-    }],
+    	ExpirationPeriod: ''
+    }
   },
 
   created() {
@@ -18,9 +20,9 @@ var app = new Vue({
       fetch('api/view/certifications.php')
         .then(response => response.json())
         .then(json => {
-          this.certifications=json;
-          console.log(this.certifications);
+          this.certInfo=json;
+          console.log(this.certInfo);
         });
       },
     },
-})
+});
