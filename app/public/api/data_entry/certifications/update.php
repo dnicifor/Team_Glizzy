@@ -12,15 +12,15 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  "UPDATE Certification SET
-    CertificateName=?,
+  "UPDATE Certifications SET
+    CertificationName=?,
     CertifyingAgency=?,
     ExpirationPeriod=?
     WHERE CertificationID=?"
 );
 // might not end up needing all fields (this lists all from member table)
 $stmt->execute([
-  $_POST['CertificateName'],
+  $_POST['CertificationName'],
   $_POST['CertifyingAgency'],
   $_POST['ExpirationPeriod'],
   $_POST['CertificationID']
