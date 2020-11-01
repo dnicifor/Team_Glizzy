@@ -23,58 +23,56 @@
           <li class="nav-item">
             <a class="nav-link" href="home.html">Home</a>
           </li>
-          <li class="nav-item" style:"padding-left:10px">
-            <a class="navbar-brand" href="members.html">Members</a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="certifications.html">Certifications</a>
+            <a class="nav-link" href="members.html">Members</a>
+          </li>
+          <li class="nav-item" style:"padding-left:10px">
+            <a class="navbar-brand" href="certifications.html">Certifications</a>
           </li>
         </ul>
       </div>
     </nav>
-      <br></br>
-      <br></br>
+
+
+    <br></br>
+    <br></br>
 
     <div id="index">
       <table>
-        <h1>Members</h1>
         <thead>
-          <th><b>ID</b></th>
-          <th><b>First Name</b></th>
-          <th><b>Last Name</b></th>
-          <th><b>Email</b></th>
-          <th><b>Phone Number</b></th>
-          <!-- <th><b>Date of Birth</b></th>
-          <th><b>Start Date</b></th>
-          <th><b>Gender</b></th>
-          <th><b>Radio Number</b></th>
-          <th><b>Station Number</b></th>
-          <th><b>Active Status</b></th> -->
+          <th><h1>Certifications</h1></th>
         </thead>
         <tbody>
-          <tr v-for="member in memInfo ">
-            <td>{{ member.PersonID }}</td>
-            <td>{{ member.FirstName }}</td>
-            <td>{{ member.LastName }}</td>
-            <td>{{ member.Email }}</td>
-            <td>{{ member.PhoneNumber }}</td>
-            <td><input type='button' value='Delete' v-on:click='deleteMember(member.Member_ID)'></td>
-            <td><input type='button' value='Edit'  v-on:click.prevent="activeMember = member"></input></td>
-            <a href = "memDetails.html" role = "button" class = "btn btn-info">Details</a>
-            <!-- <td>{{ member.DateOfBirth }}</td>
-            <td>{{ member.StartDate }}</td>
-            <td>{{ member.Gender }}</td></br>
-            <td>{{ member.RadioNumber }}</td>
-            <td>{{ member.StationNumber }}</td>
-            <td>{{ member.ActiveStatus }}</td> -->
+          <tr v-for="cert in certInfo">
+            <td><b>ID : </b> {{ cert.CertificationID }}</td>
+            <td><b>Name : </b> {{ cert.CertificationName }}</td>
+            <td><b>Agency : </b> {{ cert.CertifyingAgency }}</td>
+            <td><b>Expiration Period : </b> {{ cert.ExpirationPeriod }}</td>
           </tr>
         </tbody>
       </table>
+
+      <!-- <form v-on:submit.prevent="createCert()" id="newCertForm">
+          <label for="commentText">Certification Name</label>
+          <input type="text" v-model="newCert.CertificationName" class="form-control" id="CertificationName" placeholder="Certification Name">
+          <label for="commentText">Certification Agency</label>
+          <input type="text" v-model="newCert.CertifyingAgency" class="form-control" id="CertifyingAgency" placeholder="Certification Agency">
+          <label for="commentText">Expiration Period</label>
+          <input type="text" v-model="newCert.ExpirationPeriod" class="form-control" id="ExpirationPeriod" placeholder="Expiration Period">
+          <td>    <input type = "submit" value="Post Certification" class = "button"></td>
+      </form> -->
     </div>
+
+
+
     <!-- END content -->
+
+    <!-- Footer? Insert here -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-
     <!-- BootStrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
