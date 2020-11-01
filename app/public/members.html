@@ -21,13 +21,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="Home.html">Home</a>
+            <a class="nav-link" href="home.html">Home</a>
           </li>
           <li class="nav-item" style:"padding-left:10px">
-            <a class="navbar-brand" href="Members.html">Members</a>
+            <a class="navbar-brand" href="members.html">Members</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Certifications.html">Certifications</a>
+            <a class="nav-link" href="certifications.html">Certifications</a>
           </li>
         </ul>
       </div>
@@ -37,22 +37,33 @@
 
     <div id="members">
       <table>
+        <h1>Members</h1>
         <thead>
-          <th><h1>Members</h1></th>
+          <th><b>ID</b></th>
+          <th><b>First Name</b></th>
+          <th><b>Last Name</b></th>
+          <th><b>Email</b></th>
+          <th><b>Phone Number</b></th>
+          <th><b>Date of Birth</b></th>
+          <th><b>Start Date</b></th>
+          <th><b>Gender</b></th>
+          <th><b>Radio Number</b></th>
+          <th><b>Station Number</b></th>
+          <th><b>Active Status</b></th>
         </thead>
         <tbody>
           <tr v-for="member in memInfo ">
-            <td><b>ID : </b> {{ member.PersonID }}</td>
-            <td><b>First Name : </b> {{ member.FirstName }}</td>
-            <td><b>Last Name : </b> {{ member.LastName }}</td>
-            <td><b>Email : </b> {{ member.Email }}</td>
-            <td><b>Phone Number : </b> {{ member.PhoneNumber }}</td>
-            <td><b>Date of Birth : </b> {{ member.DateOfBirth }}</td>
-            <td><b>Start Date : </b> {{ member.StartDate }}</td>
-            <td><b>Gender : </b> {{ member.Gender }}</td></br>
-            <td><b>Radio Number : </b> {{ member.RadioNumber }}</td>
-            <td><b>Station Number : </b> {{ member.StationNumber }}</td>
-            <td><b>Active Status : </b> {{ member.ActiveStatus }}</td>
+            <td>{{ member.PersonID }}</td>
+            <td>{{ member.FirstName }}</td>
+            <td>{{ member.LastName }}</td>
+            <td>{{ member.Email }}</td>
+            <td>{{ member.PhoneNumber }}</td>
+            <td>{{ member.DateOfBirth }}</td>
+            <td>{{ member.StartDate }}</td>
+            <td>{{ member.Gender }}</td></br>
+            <td>{{ member.RadioNumber }}</td>
+            <td>{{ member.StationNumber }}</td>
+            <td>{{ member.ActiveStatus }}</td>
           </tr>
         </tbody>
       </table>
