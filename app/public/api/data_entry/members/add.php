@@ -12,12 +12,11 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO People (PersonID, FirstName, LastName, Email, PhoneNumber, DateOfBirth, StartDate, Gender, RadioNumber, StationNumber, ActiveStatus)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);'
+  'INSERT INTO People (FirstName, LastName, Email, PhoneNumber, DateOfBirth, StartDate, Gender, RadioNumber, StationNumber, ActiveStatus)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);'
 );
 
 $stmt->execute([
-  $_POST['PersonID'],
   $_POST['FirstName'],
   $_POST['LastName'],
   $_POST['Email'],
