@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Members';
+$sql = 'SELECT * FROM People';
 $vars = [];
 
 // $sql = 'SELECT p.FirstName, p.LastName, p.Email, p.PhoneNumber, p.DateOfBirth, p.StartDate, p.Gender, p.RadioNumber, p.StationNumber, p.ActiveStatus
