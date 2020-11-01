@@ -34,6 +34,7 @@ ocfrApp = new Vue({
 
       memDetails: [],
       memReport: [],
+      activeMember:null,
     },
 
     // Created Functions
@@ -109,6 +110,61 @@ ocfrApp = new Vue({
         console.log("Deleting (POSTing)...!");
       },
 
+      handleNewMemberForm() {
+
+        // TODO: Validate the data!
+
+        fetch('api/data_entry/members/add.php', {
+          method:'POST',
+          body: JSON.stringify(this.newMember),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        .then( response => response.json() )
+        .then( json => {
+          console.log("Returned from post:", json);
+          this.memInfo=json;
+
+          this.newMember = this.newMemberData();
+        });
+
+        console.log("Creating (POSTing)...!");
+        console.log(this.newMember);
+      },
+
+      newMemberData() {
+        return{
+          FirstName:"",
+          LastName:"",
+          Email:"",
+          PhoneNumber:"",
+          DateOfBirth:"",
+          StartDate:"",
+          Gender:"",
+          RadioNumber:"",
+          StationNumber:"",
+          ActiveStatus:""
+        }
+      },
+
+      handleMemberEdit() {
+        fetch('api/data_enty/members/update.php', {
+          method:'POST',
+          body: JSON.stringify(this.activeMember),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( response => response.json() )
+          .then( json => {
+            console.log("Returned from post:", json);
+            this.activeMember=json;
+          });
+
+          console.log("Updating (POSTing)...!");
+          console.log(this.activeMember);
+        },
 
       // deleteMember() {
       //   fetch('api/data_entry/members/delete.php')
