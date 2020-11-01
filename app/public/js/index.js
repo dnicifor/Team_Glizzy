@@ -47,19 +47,6 @@ ocfrApp = new Vue({
       this.fetchCertReport(); //(expiredCerts.php)
     },
 
-
-    // created() {
-    //   this.deleteMember();
-    // },
-    //
-    // created() {
-    //   this.editMember();
-    // },
-    //
-    // created() {
-    //   this.addMember();
-    // },
-
     methods: {
 
       //Members
@@ -110,7 +97,7 @@ ocfrApp = new Vue({
         console.log("Deleting (POSTing)...!");
       },
 
-      handleNewMemberForm() {
+      addMember() {
 
         // TODO: Validate the data!
 
@@ -148,7 +135,7 @@ ocfrApp = new Vue({
         }
       },
 
-      handleMemberEdit() {
+      editMember() {
         fetch('api/data_enty/members/update.php', {
           method:'POST',
           body: JSON.stringify(this.activeMember),
@@ -166,58 +153,6 @@ ocfrApp = new Vue({
           console.log(this.activeMember);
         },
 
-      // deleteMember() {
-      //   fetch('api/data_entry/members/delete.php')
-      //     .then(response => response.json())
-      //     .then(json => {
-      //       this.memInfo=json;
-      //       console.log(this.memInfo);
-      //     });
-      // },
-      //
-      // editMember() {
-      //   fetch('api/data_entry/members/update.php')
-      //     .then(response => response.json())
-      //     .then(json => {
-      //       this.memInfo=json;
-      //       console.log(this.memInfo);
-      //     });
-      // },
-      //
-      // addMember() {
-      //   fetch('api/data_entry/members/add.php', {
-      //     method:'POST',
-      //     body: JSON.stringify(this.newMember),
-      //     headers: {
-      //         "Content-type": "application/json; charset=utf-8"
-      //     }
-      //   })
-      //   .then(response => response.json())
-      //   .then( json => {
-      //     console.log("Returned from post:", json);
-      //     this.memInfo = json;
-      //     this.newMember = this.newMemberData();
-      //   });
-      //
-      //   console.log("Creating (POSTing)...!");
-      //   console.log(this.newMember);
-      //   },
-      //
-      //   newMemberData() {
-      //     return {
-      //       FirstName: "",
-      //       LastName: "",
-      //       Email: "",
-      //       PhoneNumber: "",
-      //       DateOfBirth: "",
-      //       StartDate: "",
-      //       Gender: "",
-      //       RadioNumber: "",
-      //       StationNumber: "",
-      //       ActiveStatus: ""
-      //     }
-      //   }
-
 
 
       //Certification
@@ -230,8 +165,5 @@ ocfrApp = new Vue({
             console.log(this.certInfo);
           });
         },
-
-
-
       },
   });

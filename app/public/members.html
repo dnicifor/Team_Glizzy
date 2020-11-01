@@ -70,6 +70,16 @@
           </tr>
         </tbody>
       </table>
+
+      <form v-on:submit.prevent="createCert()" id="newCertForm">
+          <label for="commentText">Certification Name</label>
+          <input type="text" v-model="newCert.CertificationName" class="form-control" id="CertificationName" placeholder="Certification Name">
+          <label for="commentText">Certification Agency</label>
+          <input type="text" v-model="newCert.CertifyingAgency" class="form-control" id="CertifyingAgency" placeholder="Certification Agency">
+          <label for="commentText">Expiration Period</label>
+          <input type="text" v-model="newCert.ExpirationPeriod" class="form-control" id="ExpirationPeriod" placeholder="Expiration Period">
+          <td>    <input type = "submit" value="Post Certification" class = "button"></td>
+      </form>
     </div>
     <!-- END content -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
