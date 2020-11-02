@@ -35,6 +35,8 @@ ocfrApp = new Vue({
       memDetails: [],
       memReport: [],
       activeMember:null,
+      certDetails: [],
+      certReport: [],
 
       selected: {
         id: '',
@@ -84,7 +86,7 @@ ocfrApp = new Vue({
       },
 
       fetchMemReport() {
-        fetch('api/Detail_view/viewMem.php')
+        fetch('api/view/memStation.php')
           .then(response => response.json())
           .then(json => {
             this.memReport=json;
@@ -112,9 +114,6 @@ ocfrApp = new Vue({
       },
 
       addMember() {
-
-        // TODO: Validate the data!
-
         fetch('api/data_entry/members/add.php', {
           method:'POST',
           body: JSON.stringify(this.newMember),
@@ -181,20 +180,20 @@ ocfrApp = new Vue({
         },
 
         fetchCertDetails() {
-          fetch('api/Detail_view/viewMem.php')
+          fetch('api/Detail_view/viewCert.php')
             .then(response => response.json())
             .then(json => {
-              this.memDetails=json;
-              console.log(this.memDetails);
+              this.certDetails=json;
+              console.log(this.certDetails);
             });
         },
 
         fetchCertReport() {
-          fetch('api/Detail_view/viewMem.php')
+          fetch('api/view/expiredCerts.php')
             .then(response => response.json())
             .then(json => {
-              this.memReport=json;
-              console.log(this.memReport);
+              this.certReport=json;
+              console.log(this.certReport);
             });
         },
       },
