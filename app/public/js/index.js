@@ -19,6 +19,7 @@ ocfrApp = new Vue({
       certInfo: [],
 
       newCert: {
+        CertificationID: '',
         CertificationName: '',
       	CertifyingAgency: '',
       	ExpirationPeriod: ''
@@ -97,7 +98,7 @@ ocfrApp = new Vue({
 
       deleteMember(mid) {
         console.log(mid);
-        fetch('api//members/delete.php', {
+        fetch('api//members/deleteMem.php', {
           method:'POST',
           body: JSON.stringify({
             "PersonID": mid
@@ -114,12 +115,9 @@ ocfrApp = new Vue({
         console.log("Deleting (POSTing)...!");
       },
 
-      handleEdit(mid) {
-        window.location.href = 'editmember.html?memberGuid='+m.memberGuid;
-      },
 
       addMember() {
-        fetch('api/members/add.php', {
+        fetch('api/data_entry/members/addMem.php', {
           method:'POST',
           body: JSON.stringify(this.newMember),
           headers: {
@@ -153,7 +151,7 @@ ocfrApp = new Vue({
       },
 
       editMember() {
-        fetch('api/members/update.php', {
+        fetch('api/members/updateMem.php', {
           method:'POST',
           body: JSON.stringify(this.activeMember),
           headers: {
@@ -200,12 +198,12 @@ ocfrApp = new Vue({
           });
         },
 
-      deleteCert(mid) {
-        console.log(mid);
-        fetch('api/certifications/delete.php', {
+      deleteCert(cid) {
+        console.log(cid);
+        fetch('api/certifications/deleteCert.php', {
           method:'POST',
           body: JSON.stringify({
-            "CertificationID": mid
+            "CertificationID": cid
           }),
           headers: {
             "Content-Type": "application/json; charset=utf-8"
@@ -220,7 +218,7 @@ ocfrApp = new Vue({
       },
 
       addCert() {
-        fetch('api/certifications/add.php', {
+        fetch('api/data_entry/certifications/addCert.php', {
           method:'POST',
           body: JSON.stringify(this.newCert),
           headers: {
@@ -230,8 +228,7 @@ ocfrApp = new Vue({
         .then( response => response.json() )
         .then( json => {
           console.log("Returned from post:", json);
-          this.certInfo=json;
-
+          this.certInfo.push(json[0]);
           this.newCert = this.newCertData();
         });
 
@@ -248,7 +245,7 @@ ocfrApp = new Vue({
       },
 
       editCert() {
-        fetch('api/certifications/update.php', {
+        fetch('api/certifications/updateCert.php', {
           method:'POST',
           body: JSON.stringify(this.activeCert),
           headers: {

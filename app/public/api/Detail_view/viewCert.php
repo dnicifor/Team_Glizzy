@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT c.CertificationName, p.FirstName, p.LastName, ca.AssignmentDate, c.ExpirationPeriod
+$sql = 'SELECT c.CertificationName, c.CertifyingAgency, p.FirstName, p.LastName, ca.AssignmentDate, c.ExpirationPeriod
 from People p, Certifications c, CertificationAssignment ca
 where p.PersonID = ca.PersonID and c.CertificationID = ca.CertificationID
 order by c.CertificationID;';
