@@ -64,22 +64,58 @@
             <td>{{ member.RadioNumber }}</td>
             <td>{{ member.StationNumber }}</td>
             <td>{{ member.ActiveStatus }}</td>
-            <td><input type='button' value='Delete' v-on:click='deleteMember(member.Member_ID)'></td>
-            <td><input type='button' value='Edit'  v-on:click.prevent="activeMember = member"></input></td>
+            <td><input type='button' value='Delete' v-on:click='deleteMember(mid)'></td>
+            <td><input type='button' value='Edit'  v-on:click='handleEdit(mid)'></input></td>
             <a href = "memDetail.html" role = "button" class = "btn btn-info">View Certificate Details</a>
           </tr>
         </tbody>
       </table>
 
-      <form v-on:submit.prevent="createCert()" id="newCertForm">
-          <label for="commentText">Certification Name</label>
-          <input type="text" v-model="newCert.CertificationName" class="form-control" id="CertificationName" placeholder="Certification Name">
-          <label for="commentText">Certification Agency</label>
-          <input type="text" v-model="newCert.CertifyingAgency" class="form-control" id="CertifyingAgency" placeholder="Certification Agency">
-          <label for="commentText">Expiration Period</label>
-          <input type="text" v-model="newCert.ExpirationPeriod" class="form-control" id="ExpirationPeriod" placeholder="Expiration Period">
-          <td>    <input type = "submit" value="Post Certification" class = "button"></td>
-      </form>
+      <form v-on:submit="addMember()">
+        <div class="form-group">
+            <label for="First">First:</label> &nbsp;
+            <input type="text" id="First" v-model="newMember.FirstName">
+        </div>
+        <div class="form-group">
+            <label for="Last">Last:</label> &nbsp;
+            <input type="text" id="Last" v-model="newMember.LastName">
+        </div>
+        <div class="form-group">
+            <label for="Title">Email:</label> &nbsp;
+            <input type="text" id="Title" v-model="newMember.Email">
+        </div>
+        <div class="form-group">
+            <label for="Address">Phone Number:</label> &nbsp;
+            <input type="text" id="Address" v-model="newMember.PhoneNumber">
+        </div>
+        <div class="form-group">
+            <label for="Address">Date Of Birth:</label> &nbsp;
+            <input type="text" id="Address" v-model="newMember.DateOfBirth">
+        </div>
+        <div class="form-group">
+            <label for="Gender">Gender:</label> &nbsp;
+            <select class="form-control" v-model="newMember.Gender" id="Gender">
+            <option value="Male">M</option>
+            <option value="Female">F</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Radio">Radio Number:</label> &nbsp;
+            <input type="text" id="Radio" v-model="newMember.RadioNumber">
+        </div>
+        <div class="form-group">
+            <label for="Department">Station:</label> &nbsp;
+            <input type="text" id="Station" v-model="newMember.StationNumber">
+        </div>
+        <div class="form-group">
+            <label for="Active">Active:</label> &nbsp;
+            <select class="form-control" v-model="newMember.IsActive" id="IsActive">
+                <option value="Yes">Yes</option>
+                <option value="NO">No</option>
+            </select>
+        </div>
+        <button type="submit" value="Create Member" class="btn btn-primary">Create</button>
+    </form>
     </div>
     <!-- END content -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

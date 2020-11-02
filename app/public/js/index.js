@@ -114,6 +114,10 @@ ocfrApp = new Vue({
         console.log("Deleting (POSTing)...!");
       },
 
+      handleEdit(mid) {
+        window.location.href = 'editmember.html?memberGuid='+m.memberGuid;
+      },
+
       addMember() {
         fetch('api/members/add.php', {
           method:'POST',
@@ -125,8 +129,7 @@ ocfrApp = new Vue({
         .then( response => response.json() )
         .then( json => {
           console.log("Returned from post:", json);
-          this.memInfo=json;
-
+          this.memInfo.push(json[0]);
           this.newMember = this.newMemberData();
         });
 
