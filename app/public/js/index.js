@@ -218,7 +218,7 @@ ocfrApp = new Vue({
       },
 
       addCert() {
-        fetch('api/certifications/addCert.php', {
+        fetch('api/data_entry/certifications/addCert.php', {
           method:'POST',
           body: JSON.stringify(this.newCert),
           headers: {
@@ -229,7 +229,6 @@ ocfrApp = new Vue({
         .then( json => {
           console.log("Returned from post:", json);
           this.certInfo.push(json[0]);
-
           this.newCert = this.newCertData();
         });
 
