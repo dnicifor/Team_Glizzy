@@ -35,6 +35,16 @@ ocfrApp = new Vue({
       memDetails: [],
       memReport: [],
       activeMember:null,
+
+      selected: {
+        id: '',
+        first: '',
+        last: ''
+      },
+
+      choose:{
+        member:''
+      }
     },
 
     // Created Functions
@@ -50,6 +60,10 @@ ocfrApp = new Vue({
     methods: {
 
       //Members
+
+      changeMember (event) {
+            this.selectedMember = event.target.options[event.target.options.selectedIndex].text
+          },
 
       fetchMember() {
         fetch('api/view/members.php')
@@ -164,6 +178,24 @@ ocfrApp = new Vue({
             this.certInfo=json;
             console.log(this.certInfo);
           });
+        },
+
+        fetchCertDetails() {
+          fetch('api/Detail_view/viewMem.php')
+            .then(response => response.json())
+            .then(json => {
+              this.memDetails=json;
+              console.log(this.memDetails);
+            });
+        },
+
+        fetchCertReport() {
+          fetch('api/Detail_view/viewMem.php')
+            .then(response => response.json())
+            .then(json => {
+              this.memReport=json;
+              console.log(this.memReport);
+            });
         },
       },
   });
