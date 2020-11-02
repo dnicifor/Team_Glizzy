@@ -38,16 +38,19 @@
     <br></br>
 
     <div id="index">
-      <table>
+      <table align="center" class="table table-bordered table-hover table-striped text-center">
         <thead>
-          <th><h1>Certifications</h1></th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Agency</th>
+          <th>Expiration Period</th>
         </thead>
         <tbody>
           <tr v-for="cert in certInfo">
-            <td><b>ID : </b> {{ cert.CertificationID }}</td>
-            <td><b>Name : </b> {{ cert.CertificationName }}</td>
-            <td><b>Agency : </b> {{ cert.CertifyingAgency }}</td>
-            <td><b>Expiration Period : </b> {{ cert.ExpirationPeriod }}</td>
+            <td>{{ cert.CertificationID }}</td>
+            <td>{{ cert.CertificationName }}</td>
+            <td>{{ cert.CertifyingAgency }}</td>
+            <td>{{ cert.ExpirationPeriod }}</td>
           </tr>
         </tbody>
       </table>

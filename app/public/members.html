@@ -36,7 +36,7 @@
       <br></br>
 
     <div id="index">
-      <table>
+      <table align="center" class="table table-bordered table-hover table-striped text-center">
         <h1>Members</h1>
         <thead>
           <th><b>ID</b></th>
@@ -66,7 +66,7 @@
             <td>{{ member.ActiveStatus }}</td>
             <td><input type='button' value='Delete' v-on:click='deleteMember(member.Member_ID)'></td>
             <td><input type='button' value='Edit'  v-on:click.prevent="activeMember = member"></input></td>
-            <a href = "memDetail.html" role = "button" class = "btn btn-info">Details</a>
+            <a href = "memDetail.html" role = "button" class = "btn btn-info">View Certificate Details</a>
           </tr>
         </tbody>
       </table>

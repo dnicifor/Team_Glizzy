@@ -36,23 +36,42 @@
       <br></br>
 
 
-      <!-- <div id="index">
-        <select class="form-control" v-model="choose.member">
+      <div id="index">
+        <!--<select class="form-control" v-model="choose.member">
           <option value="" selected disabled>Choose</option>
           <option v-for="m in memInfo" :value="m.ID" :key="m.ID">{{ m.FirstName }} {{m.LastName}}</option>
           <option v-for="m in memInfo" v-bind:value="{ id: m.ID, first: m.FirstName, last: m.LastName}">{{ m.FirstName }} {{m.LastName}}</option>
         </select>
       </div>-->
 
-      <div class="container" id="index">
-      			<section>
+        <table align="center" class="table table-bordered table-hover table-striped text-center">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Certification</th>
+              <th scope="col">Agency</th>
+              <th scope="col">Expiration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="m in memDetails">
+              <td>{{ m.FirstName }} {{ m.LastName }}</td>
+              <td>{{ m.CertificationName }}</td>
+              <td>{{ m.CertifyingAgency }}</td>
+              <td>{{ m.ExpirationPeriod }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+            <!-- <section>
       				<h2>Member Certification</h2>
       				<div class="choose">
       					<select v-model="select.member">
       						<option v-for="m in memInfo">{{m.FirstName}} {{m.LastName}}</option>
       					</select>
       				</div>
-      				<div class="icon">
+
       				<p>
       						<table>
       							<tbody>
@@ -65,8 +84,33 @@
       							</tbody>
       						</table>
               </p>
-      			</section>
-      		</div>
+      			</section> -->
+      	</div>
+
+        <!-- <form @submit.prevent="handleSubmit">
+
+          <div class="form-group">
+            <label for="inputName">Select Member: </label>
+              <select id="inputName" class="form-control" v-model="memberWithCert.member">
+                <option></option>
+                <option v-for="m in members">{{ m.firstName }} {{ m.lastName }}</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label for="inputcerts">Select Certification: </label>
+              <select id="inputcerts" class="form-control" v-model="memberWithCert.cert">
+                <option></option>
+                <option v-for="c in certs">{{ c.certificationName }} | {{ c.certifyingAgency }}</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label for="inputdate">Renewed Date</label>
+            <input type="date" class="form-control" id="inputdate" v-model="memberWithCert.date" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form> -->
     <!-- END content -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
