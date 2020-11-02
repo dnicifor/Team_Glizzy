@@ -198,12 +198,12 @@ ocfrApp = new Vue({
           });
         },
 
-      deleteCert(mid) {
-        console.log(mid);
+      deleteCert(cid) {
+        console.log(cid);
         fetch('api/certifications/deleteCert.php', {
           method:'POST',
           body: JSON.stringify({
-            "CertificationID": mid
+            "CertificationID": cid
           }),
           headers: {
             "Content-Type": "application/json; charset=utf-8"
