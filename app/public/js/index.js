@@ -263,6 +263,34 @@ ocfrApp = new Vue({
         },
 
       //CertificationAssignment???
+      addCertAssign() {
+        fetch('api/certifications/assignCert.php', {
+          method:'POST',
+          body: JSON.stringify(this.newCertAssign),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        .then( response => response.json() )
+        .then( json => {
+          console.log("Returned from post:", json);
+          this.certAssign=json;
 
+          this.newCertAssign = this.newCertAssignData();
+        });
+
+        console.log("Creating (POSTing)...!");
+        console.log(this.newCertAssign);
       },
+
+      newCertAssignData() {
+        return{
+          PersonID:"",
+          CertificationID:"",
+          AssignmentDate:""
+        }
+      },
+
+    },
+    
   });
