@@ -45,7 +45,7 @@ ocfrApp = new Vue({
         last: ''
       },
 
-      choose:{
+      select:{
         member:''
       }
     },
@@ -292,5 +292,5 @@ ocfrApp = new Vue({
       },
 
     },
-    
+
   });

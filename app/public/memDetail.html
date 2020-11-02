@@ -35,82 +35,38 @@
       <br></br>
       <br></br>
 
-      <div id="index">
+
+      <!-- <div id="index">
         <select class="form-control" v-model="choose.member">
           <option value="" selected disabled>Choose</option>
-          <!-- <option v-for="m in memInfo" :value="m.ID" :key="m.ID">{{ m.FirstName }} {{m.LastName}}</option> -->
+          <option v-for="m in memInfo" :value="m.ID" :key="m.ID">{{ m.FirstName }} {{m.LastName}}</option>
           <option v-for="m in memInfo" v-bind:value="{ id: m.ID, first: m.FirstName, last: m.LastName}">{{ m.FirstName }} {{m.LastName}}</option>
         </select>
+      </div>-->
 
-        <!-- <table>
-          <tbody>
-            <tr v-for="mem in memInfo" v-if="choose.member == (mem.FirstName + ' ' + cd.LastName)">
-              <td>{{cd.First_Name}} {{cd.Last_Name}}</td>
-              <td>{{cd.Certificate_Name}}</td>
-              <td>{{cd.Exp_Date}}</td>
-            </tr>
-          </tbody>
-        </table> -->
-      </div>
-
-      <!-- <div class="container" id="index">
+      <div class="container" id="index">
       			<section>
       				<h2>Member Certification</h2>
       				<div class="choose">
       					<select v-model="select.member">
       						<option v-for="m in memInfo">{{m.FirstName}} {{m.LastName}}</option>
       					</select>
-      				</div> -->
-      				<!-- <div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
+      				</div>
+      				<div class="icon">
       				<p>
       						<table>
       							<tbody>
-      								<tr v-for="ca in certAssign" v-if="choose.member=='' || choose.member == (cd.First_Name + ' ' + cd.Last_Name)">
-      									<td>{{cd.First_Name}} {{cd.Last_Name}}</td>
-      									<td>{{cd.Certificate_Name}}</td>
-      									<td>{{cd.Exp_Date}}</td>
+      								<tr v-for="deets in memDetails" v-if="select.member=='' || select.member == (deets.First_Name + ' ' + deets.Last_Name)">
+      									<td>{{deets.FirstName}} {{deets.LastName}}</td>
+      									<td>{{deets.CertificationName}}</td>
+                        <td>{{deets.CertifyingAgency}}</td>
+      									<td>{{deets.ExpirationPeriod}}</td>
       								</tr>
       							</tbody>
       						</table>
               </p>
       			</section>
-      		</div> -->
-    <!-- <div id="index">
-      <table>
-        <h1>Members</h1>
-        <thead>
-          <th><b>ID</b></th>
-          <th><b>First Name</b></th>
-          <th><b>Last Name</b></th>
-          <th><b>Email</b></th>
-          <th><b>Phone Number</b></th>
-          <th><b>Date of Birth</b></th>
-          <th><b>Start Date</b></th>
-          <th><b>Gender</b></th>
-          <th><b>Radio Number</b></th>
-          <th><b>Station Number</b></th>
-          <th><b>Active Status</b></th>
-        </thead>
-        <tbody>
-          <tr v-for="member in memInfo ">
-            <td>{{ member.PersonID }}</td>
-            <td>{{ member.FirstName }}</td>
-            <td>{{ member.LastName }}</td>
-            <td>{{ member.Email }}</td>
-            <td>{{ member.PhoneNumber }}</td>
-            <td><input type='button' value='Delete' v-on:click='deleteMember(member.Member_ID)'></td>
-            <td><input type='button' value='Edit'  v-on:click.prevent="activeMember = member"></input></td>
-            <a href = "memDetails.html" role = "button" class = "btn btn-info">Details</a>
-            <td>{{ member.DateOfBirth }}</td>
-            <td>{{ member.StartDate }}</td>
-            <td>{{ member.Gender }}</td></br>
-            <td>{{ member.RadioNumber }}</td>
-            <td>{{ member.StationNumber }}</td>
-            <td>{{ member.ActiveStatus }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div> -->
+      		</div>
     <!-- END content -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
