@@ -71,25 +71,25 @@
         </tbody>
       </table>
 
-      <form v-on:submit="addMember()">
+      <form v-on:submit.prevent="addMember()" id="addMemberForm">
         <div class="form-group">
-            <label for="First">First:</label>;
+            <label for="FirstName">First:</label> &nbsp;
             <input type="text" id="First" v-model="newMember.FirstName">
         </div>
         <div class="form-group">
-            <label for="Last">Last:</label>;
+            <label for="LastName">Last:</label> &nbsp;
             <input type="text" id="Last" v-model="newMember.LastName">
         </div>
         <div class="form-group">
-            <label for="Title">Email:</label>;
+            <label for="Email">Email:</label> &nbsp;
             <input type="text" id="Title" v-model="newMember.Email">
         </div>
         <div class="form-group">
-            <label for="Address">Phone Number:</label>;
+            <label for="PhoneNumber">Phone Number:</label> &nbsp;
             <input type="text" id="Address" v-model="newMember.PhoneNumber">
         </div>
         <div class="form-group">
-            <label for="Address">Date Of Birth:</label>;
+            <label for="DateOfBirth">Date Of Birth:</label> &nbsp;
             <input type="text" id="Address" v-model="newMember.DateOfBirth">
         </div>
         <div class="form-group">
@@ -100,15 +100,15 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="Radio">Radio Number:</label>;
+            <label for="RadioNumber">Radio Number:</label> &nbsp;
             <input type="text" id="Radio" v-model="newMember.RadioNumber">
         </div>
         <div class="form-group">
-            <label for="Department">Station:</label>;
+            <label for="StationNumber">Station:</label> &nbsp;
             <input type="text" id="Station" v-model="newMember.StationNumber">
         </div>
         <div class="form-group">
-            <label for="Active">Active:</label>;
+            <label for="ActiveStatus">Active:</label> &nbsp;
             <select class="form-control" v-model="newMember.IsActive" id="IsActive">
                 <option value="Yes">Yes</option>
                 <option value="NO">No</option>
