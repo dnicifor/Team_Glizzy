@@ -116,8 +116,8 @@ ocfrApp = new Vue({
       },
 
 
-      addMember(){
-        fetch('api/members/addMem.php', {
+      addMember() {
+        fetch('api/data_entry/members/addMem.php', {
           method:'POST',
           body: JSON.stringify(this.newMember),
           headers: {
