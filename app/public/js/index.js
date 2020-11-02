@@ -37,6 +37,7 @@ ocfrApp = new Vue({
       activeMember:null,
       certDetails: [],
       certReport: [],
+      activeCert:null,
 
       selected: {
         id: '',
@@ -96,7 +97,7 @@ ocfrApp = new Vue({
 
       deleteMember(mid) {
         console.log(mid);
-        fetch('api/data_entry/members/delete.php', {
+        fetch('api//members/delete.php', {
           method:'POST',
           body: JSON.stringify({
             "PersonID": mid
@@ -114,7 +115,7 @@ ocfrApp = new Vue({
       },
 
       addMember() {
-        fetch('api/data_entry/members/add.php', {
+        fetch('api/members/add.php', {
           method:'POST',
           body: JSON.stringify(this.newMember),
           headers: {
@@ -149,7 +150,7 @@ ocfrApp = new Vue({
       },
 
       editMember() {
-        fetch('api/data_enty/members/update.php', {
+        fetch('api/members/update.php', {
           method:'POST',
           body: JSON.stringify(this.activeMember),
           headers: {
@@ -167,7 +168,6 @@ ocfrApp = new Vue({
         },
 
 
-
       //Certification
 
       fetchCert() {
@@ -179,22 +179,88 @@ ocfrApp = new Vue({
           });
         },
 
-        fetchCertDetails() {
-          fetch('api/Detail_view/viewCert.php')
-            .then(response => response.json())
-            .then(json => {
-              this.certDetails=json;
-              console.log(this.certDetails);
-            });
+      fetchCertDetails() {
+        fetch('api/Detail_view/viewCert.php')
+          .then(response => response.json())
+          .then(json => {
+            this.certDetails=json;
+            console.log(this.certDetails);
+          });
         },
 
-        fetchCertReport() {
-          fetch('api/view/expiredCerts.php')
-            .then(response => response.json())
-            .then(json => {
-              this.certReport=json;
-              console.log(this.certReport);
-            });
+      fetchCertReport() {
+        fetch('api/view/expiredCerts.php')
+          .then(response => response.json())
+          .then(json => {
+            this.certReport=json;
+            console.log(this.certReport);
+          });
         },
+
+      deleteCert(mid) {
+        console.log(mid);
+        fetch('api/certifications/delete.php', {
+          method:'POST',
+          body: JSON.stringify({
+            "CertificationID": mid
+          }),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        .then( response => response.json() )
+        .then( json => {
+          console.log("Returned from post:", json);
+          this.certInfo=json;
+        });
+        console.log("Deleting (POSTing)...!");
+      },
+
+      addCert() {
+        fetch('api/certifications/add.php', {
+          method:'POST',
+          body: JSON.stringify(this.newCert),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        .then( response => response.json() )
+        .then( json => {
+          console.log("Returned from post:", json);
+          this.certInfo=json;
+
+          this.newCert = this.newCertData();
+        });
+
+        console.log("Creating (POSTing)...!");
+        console.log(this.newCert);
+      },
+
+      newCertData() {
+        return{
+          CertificationName:"",
+          CertifyingAgency:"",
+          ExpirationPeriod:""
+        }
+      },
+
+      editCert() {
+        fetch('api/certifications/update.php', {
+          method:'POST',
+          body: JSON.stringify(this.activeCert),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( response => response.json() )
+          .then( json => {
+            console.log("Returned from post:", json);
+            this.activeCert=json;
+          });
+
+          console.log("Updating (POSTing)...!");
+          console.log(this.activeCert);
+        },
+
       },
   });
