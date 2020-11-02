@@ -65,7 +65,7 @@
             <td>{{ member.StationNumber }}</td>
             <td>{{ member.ActiveStatus }}</td>
             <td><input type='button' value='Delete' v-on:click='deleteMember(member.PersonID)'></td>
-            <td><input type='button' value='Edit'  v-on:click='handleEdit(mid)'></input></td>
+            <td><input type='button' value='Edit'  v-on:click.prevent="activeMember = member"></input></td>
             <a href = "memDetail.html" role = "button" class = "btn btn-info">View Member Details</a>
           </tr>
         </tbody>
