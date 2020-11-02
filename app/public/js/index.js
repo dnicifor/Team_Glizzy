@@ -96,12 +96,12 @@ ocfrApp = new Vue({
           });
       },
 
-      deleteMember(mid) {
-        console.log(mid);
+      deleteMember(deleteMember) {
+        console.log(deleteMember);
         fetch('api//members/deleteMem.php', {
           method:'POST',
           body: JSON.stringify({
-            "PersonID": mid
+            "PersonID": deleteMember
           }),
           headers: {
             "Content-Type": "application/json; charset=utf-8"
