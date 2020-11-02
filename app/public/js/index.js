@@ -40,15 +40,6 @@ ocfrApp = new Vue({
       certReport: [],
       activeCert:null,
 
-      selected: {
-        id: '',
-        first: '',
-        last: ''
-      },
-
-      select:{
-        member:''
-      }
     },
 
     // Created Functions
@@ -98,7 +89,7 @@ ocfrApp = new Vue({
 
       deleteMember(deleteMember) {
         console.log(deleteMember);
-        fetch('api//members/deleteMem.php', {
+        fetch("api/data_entry/members/deleteMem.php", {
           method:'POST',
           body: JSON.stringify({
             "PersonID": deleteMember
@@ -198,12 +189,12 @@ ocfrApp = new Vue({
           });
         },
 
-      deleteCert(cid) {
-        console.log(cid);
-        fetch('api/certifications/deleteCert.php', {
+      deleteCertification(deleteCertification) {
+        console.log(deleteCertification);
+        fetch('api/data_entry/certifications/deleteCert.php', {
           method:'POST',
           body: JSON.stringify({
-            "CertificationID": cid
+            "CertificationID": deleteCertification
           }),
           headers: {
             "Content-Type": "application/json; charset=utf-8"

@@ -41,10 +41,10 @@
       <table align="center" class="table table-bordered table-hover table-striped text-center">
         <h1> Certifications</h1>
         <thead>
-          <th>ID</th>
-          <th>Certification</th>
-          <th>Agency</th>
-          <th>Expiration Period</th>
+          <th><b>ID</b></th>
+          <th><b>Certification</b></th>
+          <th><b>Agency</b></th>
+          <th><b>Expiration Period</b></th>
         </thead>
         <tbody>
           <tr v-for="cert in certInfo">
@@ -52,6 +52,7 @@
             <td>{{ cert.CertificationName }}</td>
             <td>{{ cert.CertifyingAgency }}</td>
             <td>{{ cert.ExpirationPeriod }}</td>
+            <td><input type='button' value='Delete' v-on:click='deleteCertification(cert.CertificationID)'  onclick="windows.location.reload()"></td>
             <a href = "certDetail.html" role = "button" class = "btn btn-info">View Certificate Details</a>
           </tr>
         </tbody>
