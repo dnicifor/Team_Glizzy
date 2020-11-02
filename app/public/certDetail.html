@@ -38,29 +38,25 @@
     <br></br>
 
     <div id="index">
-      <table>
+      <table align="center" class="table table-bordered table-hover table-striped text-center">
         <thead>
-          <th><h1>Certifications</h1></th>
+          <tr>
+            <th scope="col">Certification</th>
+            <th scope="col">Name</th>
+            <th scope="col">AssignmentDate</th>
+            <th scope="col">Expiration</th>
+          </tr>
         </thead>
         <tbody>
-          <tr v-for="cert in certInfo">
-            <td><b>ID : </b> {{ cert.CertificationID }}</td>
-            <td><b>Name : </b> {{ cert.CertificationName }}</td>
-            <td><b>Agency : </b> {{ cert.CertifyingAgency }}</td>
-            <td><b>Expiration Period : </b> {{ cert.ExpirationPeriod }}</td>
+          <tr v-for="m in certDetails">
+            <td>{{ m.CertificationName }}</td>
+            <td>{{ m.CertifyingAgency }}</td>
+            <td>{{ m.FirstName }} {{ m.LastName }}</td>
+            <td>{{ m.AssignmentDate }}</td>
+            <td>{{ m.ExpirationPeriod }}</td>
           </tr>
         </tbody>
       </table>
-
-      <!-- <form v-on:submit.prevent="createCert()" id="newCertForm">
-          <label for="commentText">Certification Name</label>
-          <input type="text" v-model="newCert.CertificationName" class="form-control" id="CertificationName" placeholder="Certification Name">
-          <label for="commentText">Certification Agency</label>
-          <input type="text" v-model="newCert.CertifyingAgency" class="form-control" id="CertifyingAgency" placeholder="Certification Agency">
-          <label for="commentText">Expiration Period</label>
-          <input type="text" v-model="newCert.ExpirationPeriod" class="form-control" id="ExpirationPeriod" placeholder="Expiration Period">
-          <td>    <input type = "submit" value="Post Certification" class = "button"></td>
-      </form> -->
     </div>
 
 

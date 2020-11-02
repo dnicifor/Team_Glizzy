@@ -41,7 +41,7 @@
       <table align="center" class="table table-bordered table-hover table-striped text-center">
         <thead>
           <th>ID</th>
-          <th>Name</th>
+          <th>Certification</th>
           <th>Agency</th>
           <th>Expiration Period</th>
         </thead>
@@ -51,11 +51,12 @@
             <td>{{ cert.CertificationName }}</td>
             <td>{{ cert.CertifyingAgency }}</td>
             <td>{{ cert.ExpirationPeriod }}</td>
+            <a href = "certDetail.html" role = "button" class = "btn btn-info">View Certificate Details</a>
           </tr>
         </tbody>
       </table>
 
-      <form v-on:submit.prevent="createCert()" id="newCertForm">
+      <form v-on:submit.prevent="addCert()" id="newCertForm">
           <label for="commentText">Certification Name</label>
           <input type="text" v-model="newCert.CertificationName" class="form-control" id="CertificationName" placeholder="Certification Name">
           <label for="commentText">Certification Agency</label>
