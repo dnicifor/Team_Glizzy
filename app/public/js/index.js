@@ -114,9 +114,6 @@ ocfrApp = new Vue({
         console.log("Deleting (POSTing)...!");
       },
 
-      handleEdit(mid) {
-        window.location.href = 'editmember.html?memberGuid='+m.memberGuid;
-      },
 
       addMember() {
         fetch('api/members/add.php', {
