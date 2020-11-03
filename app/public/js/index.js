@@ -97,7 +97,7 @@ ocfrApp = new Vue({
           headers: {
             "Content-Type": "application/json; charset=utf-8"
           }
-        })
+        })  
         .then( response => response.json() )
         .then( json => {
           console.log("Returned from post:", json);
