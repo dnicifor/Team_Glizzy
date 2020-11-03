@@ -32,7 +32,7 @@ ocfrApp = new Vue({
         CertificationID: '',
         AssignmentDate: ''
       },
-
+      member:{},
       memDetails: [],
       memReport: [],
       activeMember:null,
@@ -101,8 +101,9 @@ ocfrApp = new Vue({
         .then( response => response.json() )
         .then( json => {
           console.log("Returned from post:", json);
-          this.memInfo=json;
+          this.memInfo.push(json[0]);
         });
+        window.location.href = 'members.html'
         console.log("Deleting (POSTing)...!");
       },
 
@@ -121,7 +122,7 @@ ocfrApp = new Vue({
           this.memInfo.push(json[0]);
           this.newMember = this.newMemberData();
         });
-
+        window.location.href = 'members.html'
         console.log("Creating (POSTing)...!");
         console.log(this.newMember);
       },
@@ -142,22 +143,8 @@ ocfrApp = new Vue({
       },
 
       editMember() {
-        fetch('api/members/updateMem.php', {
-          method:'POST',
-          body: JSON.stringify(this.activeMember),
-          headers: {
-            "Content-Type": "application/json; charset=utf-8"
-            }
-          })
-          .then( response => response.json() )
-          .then( json => {
-            console.log("Returned from post:", json);
-            this.activeMember=json;
-          });
-
-          console.log("Updating (POSTing)...!");
-          console.log(this.activeMember);
-        },
+      window.location.href = 'memberedit.html?PersonID='+member.PersonID;
+    },
 
 
       //Certification

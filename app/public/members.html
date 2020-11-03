@@ -64,9 +64,10 @@
             <td>{{ member.RadioNumber }}</td>
             <td>{{ member.StationNumber }}</td>
             <td>{{ member.ActiveStatus }}</td>
-            <td><input type='button' value='Delete' v-on:click='deleteMember(member.PersonID)'  onclick="windows.location.reload()"></td>
-            <td><input type='button' value='Edit'  v-on:click='handleEdit(mid)'></input></td>
+            <td><input type='button' value='Delete' v-on:click.prevent='deleteMember(member.PersonID)'></td>
+            <td><input type='button' value='Edit'  v-on:click='editMember(member.PersonID)'></input></td>
             <a href = "memDetail.html" role = "button" class = "btn btn-info">View Member Details</a>
+            <a href = "memberedit.html" role = "button" class = "btn btn-info">Edit Your Member!</a>
           </tr>
         </tbody>
       </table>
