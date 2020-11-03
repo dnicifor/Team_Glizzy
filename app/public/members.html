@@ -75,15 +75,15 @@
       <form v-on:submit.prevent="addMember()" id="addMemberForm">
         <div class="form-group">
             <label for="FirstName">First:</label> &nbsp;
-            <input type="text" id="First" v-model="newMember.FirstName">
+            <input type="text" id="First" v-model="newMember.FirstName" required>
         </div>
         <div class="form-group">
             <label for="LastName">Last:</label> &nbsp;
-            <input type="text" id="Last" v-model="newMember.LastName">
+            <input type="text" id="Last" v-model="newMember.LastName"required>
         </div>
         <div class="form-group">
             <label for="Email">Email:</label> &nbsp;
-            <input type="text" id="Title" v-model="newMember.Email">
+            <input type="email" id="Title" v-model="newMember.Email"required>
         </div>
         <div class="form-group">
             <label for="PhoneNumber">Phone Number:</label> &nbsp;
@@ -91,7 +91,7 @@
         </div>
         <div class="form-group">
             <label for="DateOfBirth">Date Of Birth:</label> &nbsp;
-            <input type="text" id="Address" v-model="newMember.DateOfBirth">
+            <input type="date" id="Address" v-model="newMember.DateOfBirth">
         </div>
         <div class="form-group">
             <label for="Gender">Gender:</label>;
@@ -106,7 +106,7 @@
         </div>
         <div class="form-group">
             <label for="StationNumber">Station:</label> &nbsp;
-            <input type="text" id="Station" v-model="newMember.StationNumber">
+            <input type="number" id="Station" v-model="newMember.StationNumber">
         </div>
         <div class="form-group">
             <label for="ActiveStatus">Active:</label> &nbsp;

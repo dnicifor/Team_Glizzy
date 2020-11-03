@@ -61,15 +61,15 @@
       <form v-on:submit.prevent="addCert()" id="newCertForm">
         <div class="form-group">
           <label for="CertificationName">Certification Name</label> &nbsp;
-          <input type="text" id="CertificationName" v-model="newCert.CertificationName" class="form-control"  placeholder="Certification Name">
+          <input type="text" id="CertificationName" v-model="newCert.CertificationName" class="form-control"  placeholder="Certification Name" required>
         </div>
         <div class="form-group">
           <label for="CertifyingAgency">Certification Agency</label> &nbsp;
-          <input type="text" id="CertifyingAgency" v-model="newCert.CertifyingAgency" class="form-control"  placeholder="Certification Agency">
+          <input type="text" id="CertifyingAgency" v-model="newCert.CertifyingAgency" class="form-control"  placeholder="Certification Agency" required>
         </div>
         <div class="form-group">
           <label for="ExpirationPeriod">Expiration Period</label> &nbsp;
-          <input type="text" id="ExpirationPeriod" v-model="newCert.ExpirationPeriod" class="form-control"  placeholder="Expiration Period">
+          <input type="number" id="ExpirationPeriod" v-model="newCert.ExpirationPeriod" class="form-control"  placeholder="Expiration Period" required>
         </div>
         <button type="submit" value="Create Certification" class="btn btn-primary">Create</button>
       </form>
